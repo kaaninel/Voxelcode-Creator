@@ -1,0 +1,151 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>VoxelCode Generator Page</title>
+        <meta name="description" content="VOXELCODE CREATING PAGE">
+        <meta name="author" content="radix">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" href="images/favicon/favicon.ico">
+        <link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-touch-icon-114x114.png">
+
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,900,700' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Iceberg' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+
+        
+        <!-- All CSS -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+
+        <!-- Condition script for ie for responsive and html5 -->
+        <!--[if lt IE 9]> 
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+
+    </head>
+
+    <body>
+
+        <div id="preloader_body">
+            <div class="prelader_item">
+                <div class="prelader_table">
+                    <div class="prelader_table_cell">
+                        <div class="item-loader-container">
+                            <div class="la-square-spin la-2x item-generate">
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-title title_txt">VOXELCODE</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="bg" class="bg-header">
+            <div class="bg-overley"></div>
+        </div> <!-- //END OF BACKGROUND -->
+        
+        
+             <div class="bg-content">
+                <div class="container">                                                           
+                                                       
+          
+                                <div class="bg-heading">
+                                    <h1><strong>VoxelCode</strong> Generator</h1>
+                                </div>
+                                        
+                                 <div class="the-textarea">
+                                      <textarea 
+                                      id="data"
+                                      rows="2"
+                                      type="text"
+                                      value="bla bla blaaaaaaaaaahhh"
+                                      oninput="document.querySelector('cqr-code').data = this.value"
+                                      placeholder="WRITE YOUR TEXT HERE"
+                                      autofocus                                      
+                                      ></textarea>
+                                                                  
+                                        <cqr-code data=""></cqr-code>
+                                </div>   
+                                                    
+                                <div class="form">
+                                    <form>            
+                                    
+                                        <h4 for="format">Format</h4>
+                                        <select
+                                            id="format"
+                                            onchange="document.querySelector('cqr-code').format = this.value;">
+                                            <option value="png" selected>PNG</option>
+                                            <option value="pngd">PNG Debug</option>
+                                        </select>
+                                        <br><br>
+                                        <h4 for="modulesize">Module size</h4>
+                                        <input
+                                            id="modulesize"
+                                            type="number"
+                                            value="5"
+                                            oninput="document.querySelector('cqr-code').modulesize = this.value"
+                                            min=0
+                                            max=10
+                                            onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                                        />
+                                        <br><br>
+                                        <h4 for="margin" >Margin</h4>
+                                        <input
+                                            id="margin"
+                                            type="number"
+                                            value="4"
+                                            oninput="document.querySelector('cqr-code').margin = this.value"
+                                            min=0
+                                            max=30
+                                            onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                                            
+                                        />
+                                        <br><br>
+                                        <h4 for="layer">Layer</h4>
+                                        <input
+                                            id="layer"
+                                            type="number"
+                                            value="3"
+                                            oninput="document.querySelector('cqr-code').layer = this.value"
+                                            min=1
+                                            max=24
+                                            onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                                        />                         
+                                    </form>                   
+                                                            
+                                 </div>    
+                                 
+                </div>
+            </div>       
+        
+        
+
+
+        <!-- JS FILES -->
+        <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+        <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/jquery.textarea_autosize.js"></script>
+        <script type="text/javascript" src="js/jquery.ajaxchimp.min.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+        
+        <!-- Polyfill -->
+        <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+        <!-- Webcomponent and dependencies -->
+        <script src="bower_components/cqrjs/cqr.js"></script>
+        <script src="../src/cqr-code.js"></script>        
+
+
+
+    </body>
+
+</html>

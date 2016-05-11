@@ -1,0 +1,459 @@
+@charset "utf-8";
+/*------------------------------------------------------------------
+[Main Stylesheet]
+
+Project:    VoxelCode
+Version:    0.1
+
+-------------------------------------------------------------------*/
+
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+    background-color: #f6f6f6;
+    color: #333333;
+}
+
+/* -----------------------------------------------------------------
+  TYPOGRAPHY
+-------------------------------------------------------------------*/
+a, a:hover, a:focus, a:active {
+  text-decoration:none !important;
+  color: #333;
+}
+a:focus {
+  outline:0px solid
+}
+input:focus {
+  outline: none !important;
+}
+a{
+  font-size: 1em;
+  font-weight: 700;
+}
+img {
+  max-width:100%;
+  border: none;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight:normal;
+  margin:0 0 15px;
+  color: #f6f6f6;
+}
+h1{
+  text-transform: uppercase;
+  font-size: 4.000em;
+}
+h2{
+  text-transform: uppercase;
+  font-size: 4.000em;
+}
+h3{
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 1.250em;
+}
+p {
+  font-size: 1em;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.7;
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+canvas {
+  width: 100%;
+  height: 100%;
+}
+input{
+    -moz-box-sizing: border-box;
+     -ms-box-sizing: border-box;
+     -webkit-box-sizing: border-box;
+     box-sizing: border-box;
+}
+#VoxelCode-preloader {
+  background-color: #FCF5E4;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 999999;
+}
+
+/* -----------------------------------------------------------------
+  VoxelCode - BACKGROUND CSS
+------------------------------------------------------------------*/
+.bg-header {
+  background-color: darkgray;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: fixed;
+  min-height: 450px;
+}
+.bg-content .container {
+  position: relative;
+}
+.bg-content {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  z-index: 2;
+  margin-top: 2%;
+  margin-bottom: 7%;
+}
+.bg-heading h1 {
+  margin: 30px 0;
+}
+.bg-heading h2 {
+  font-size: 2em;
+  margin-top: 23px;
+  text-transform: none;
+  margin-bottom: 45px;
+}
+@keyframes scroll-down-infinit {
+  0% {
+      bottom: 10px;
+  }
+  50% {
+      bottom: 18px;
+  }
+  100% {
+      bottom: 10px;
+  }
+}
+@-webkit-keyframes scroll-down-infinit {
+  0% {
+      bottom: 10px;
+  }
+  50% {
+      bottom: 18px;
+  }
+  100% {
+      bottom: 10px;
+  }
+}
+.bg-overley {
+  background-color: rgba(0, 0, 0, 0.85);
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+/* -----------------------------------------------------------------
+  VoxelCode - FORM CSS
+------------------------------------------------------------------*/
+.form {
+  width: 100%;
+  position: relative;
+  z-index: 4;
+}
+.form form {
+  margin: auto;
+  max-width: 360px;
+  width: 30%;
+  text-align: center;
+  position: relative;
+}
+.form input {
+  background-color: transparent;
+  font-size: 15px;
+  color: #f6f6f6;
+  line-height: 15px;
+  padding: 10px;
+  border-top: 0px solid;
+  border-left: 0px solid;
+  border-right: 0px solid;
+  border-bottom: 1px solid #f6f6f6;
+  text-align: center;
+  width: 100%;
+}
+.form select {
+  background-color: transparent;
+  font-size: 15px;
+  color: #f6f6f6;
+  line-height: 15px;
+  padding: 10px;
+  border-top: 0px solid;
+  border-left: 0px solid;
+  border-right: 0px solid;
+  border-bottom: 1px solid #f6f6f6;
+  text-align: center;
+  width: 100%;
+}
+option { 
+    background-color: #333;
+}
+/* -----------------------------------------------------------------
+  VoxelCode - FORM-TEXTAREA CSS
+------------------------------------------------------------------*/
+.the-textarea label {
+  cursor: pointer;
+  display: block;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.the-textarea input,
+.the-textarea textarea {
+  background-color: transparent;
+  font-size: 15px;
+  color: #f6f6f6;
+  line-height: 15px;
+  padding: 10px 10px 10px 0;
+  border-top: 0px solid;
+  border-left: 0px solid;
+  border-right: 0px solid;
+  border-bottom: 1px solid #f6f6f6;
+  text-align: left;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.the-textarea {
+  margin-bottom: 40px;
+  position: relative;
+}
+.the-textarea::before {
+  background-color: #333;
+  bottom: 0;
+  content: "";
+  height: 1px;
+  position: absolute;
+  width: 0%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  -webkit-transition: 0.4s width ;
+  -moz-transition: 0.4s width ;
+  transition: 0.4s width ;
+}
+.the-textarea textarea {
+  box-sizing: border-box;
+  min-height: 38px;
+  overflow-x: hidden;
+  line-height: 1.5;
+}
+.the-textarea:nth-child(3) {
+  margin-bottom: 20px;
+}
+@keyframes fullWidth {
+  to {
+      width: 100%;
+  }
+}
+@-webkit-keyframes fullWidth {
+ to {
+      width: 100%;
+  }
+}
+.the-textarea.active_item::before {
+  -webkit-animation-name: fullWidth;
+  animation-name: fullWidth;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-duration: 0.9s;
+  animation-duration: 0.9s;
+}
+
+/* -----------------------------------------------------------------
+  VoxelCode - PRELOADER CSS
+------------------------------------------------------------------*/
+#preloader_body {
+  background-color: #f8f8f8;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 99999;
+}
+.prelader_item {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+.prelader_table {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+.prelader_table_cell {
+  display: inline-block;
+}
+.title_txt {
+  font-size: 2em;
+  line-height: 1;
+  margin-top: 22px;
+  position: relative;
+  text-transform: uppercase;
+}
+.title_txt::before {
+  background-color: #ffbf00;
+  bottom: -12px;
+  content: "";
+  display: block;
+  height: 1px;
+  left: 50%;
+  position: absolute;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: 175px;
+}
+.la-square-spin,
+.la-square-spin > div {
+    position: relative;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+.la-square-spin {
+    display: block;
+    font-size: 0;
+    color: #333;
+}
+
+.la-square-spin.la-dark {
+    color: #333;
+}
+
+.la-square-spin > div {
+    display: inline-block;
+    float: none;
+    background-color: currentColor;
+    border: 0 solid currentColor;
+}
+
+.la-square-spin {
+    width: 32px;
+    height: 32px;
+}
+
+.la-square-spin > div {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    -webkit-animation: square-spin 3s 0s cubic-bezier(.09, .57, .49, .9) infinite;
+       -moz-animation: square-spin 3s 0s cubic-bezier(.09, .57, .49, .9) infinite;
+         -o-animation: square-spin 3s 0s cubic-bezier(.09, .57, .49, .9) infinite;
+            animation: square-spin 3s 0s cubic-bezier(.09, .57, .49, .9) infinite;
+}
+
+.la-square-spin.la-sm {
+    width: 16px;
+    height: 16px;
+}
+
+.la-square-spin.la-2x {
+    width: 64px;
+    height: 64px;
+}
+
+.la-square-spin.la-3x {
+    width: 96px;
+    height: 96px;
+}
+
+/*
+ * Animation
+ */
+@-webkit-keyframes square-spin {
+    0% {
+        -webkit-transform: perspective(100px) rotateX(0) rotateY(0);
+                transform: perspective(100px) rotateX(0) rotateY(0);
+    }
+    25% {
+        -webkit-transform: perspective(100px) rotateX(180deg) rotateY(0);
+                transform: perspective(100px) rotateX(180deg) rotateY(0);
+    }
+    50% {
+        -webkit-transform: perspective(100px) rotateX(180deg) rotateY(180deg);
+                transform: perspective(100px) rotateX(180deg) rotateY(180deg);
+    }
+    75% {
+        -webkit-transform: perspective(100px) rotateX(0) rotateY(180deg);
+                transform: perspective(100px) rotateX(0) rotateY(180deg);
+    }
+    100% {
+        -webkit-transform: perspective(100px) rotateX(0) rotateY(360deg);
+                transform: perspective(100px) rotateX(0) rotateY(360deg);
+    }
+}
+@-moz-keyframes square-spin {
+    0% {
+        -moz-transform: perspective(100px) rotateX(0) rotateY(0);
+             transform: perspective(100px) rotateX(0) rotateY(0);
+    }
+    25% {
+        -moz-transform: perspective(100px) rotateX(180deg) rotateY(0);
+             transform: perspective(100px) rotateX(180deg) rotateY(0);
+    }
+    50% {
+        -moz-transform: perspective(100px) rotateX(180deg) rotateY(180deg);
+             transform: perspective(100px) rotateX(180deg) rotateY(180deg);
+    }
+    75% {
+        -moz-transform: perspective(100px) rotateX(0) rotateY(180deg);
+             transform: perspective(100px) rotateX(0) rotateY(180deg);
+    }
+    100% {
+        -moz-transform: perspective(100px) rotateX(0) rotateY(360deg);
+             transform: perspective(100px) rotateX(0) rotateY(360deg);
+    }
+}
+@-o-keyframes square-spin {
+    0% {
+        transform: perspective(100px) rotateX(0) rotateY(0);
+    }
+    25% {
+        transform: perspective(100px) rotateX(180deg) rotateY(0);
+    }
+    50% {
+        transform: perspective(100px) rotateX(180deg) rotateY(180deg);
+    }
+    75% {
+        transform: perspective(100px) rotateX(0) rotateY(180deg);
+    }
+    100% {
+        transform: perspective(100px) rotateX(0) rotateY(360deg);
+    }
+}
+@keyframes square-spin {
+    0% {
+        -webkit-transform: perspective(100px) rotateX(0) rotateY(0);
+           -moz-transform: perspective(100px) rotateX(0) rotateY(0);
+                transform: perspective(100px) rotateX(0) rotateY(0);
+    }
+    25% {
+        -webkit-transform: perspective(100px) rotateX(180deg) rotateY(0);
+           -moz-transform: perspective(100px) rotateX(180deg) rotateY(0);
+                transform: perspective(100px) rotateX(180deg) rotateY(0);
+    }
+    50% {
+        -webkit-transform: perspective(100px) rotateX(180deg) rotateY(180deg);
+           -moz-transform: perspective(100px) rotateX(180deg) rotateY(180deg);
+                transform: perspective(100px) rotateX(180deg) rotateY(180deg);
+    }
+    75% {
+        -webkit-transform: perspective(100px) rotateX(0) rotateY(180deg);
+           -moz-transform: perspective(100px) rotateX(0) rotateY(180deg);
+                transform: perspective(100px) rotateX(0) rotateY(180deg);
+    }
+    100% {
+        -webkit-transform: perspective(100px) rotateX(0) rotateY(360deg);
+           -moz-transform: perspective(100px) rotateX(0) rotateY(360deg);
+                transform: perspective(100px) rotateX(0) rotateY(360deg);
+    }
+}

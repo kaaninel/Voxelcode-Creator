@@ -1,0 +1,33 @@
+/* For Tablet. */
+@media (max-width: 1024px) {
+  .mg-contact-form {
+    width: 70%;
+  }
+} /***** END TABLET *****/
+
+/* For Mobile. */
+@media (max-width: 767px) {
+
+  .mg-hero-heading h1 {
+    margin: 45px 0;
+    font-size: 3em;
+  }
+  .mg-hero-heading h2 {
+    font-size: 1.5em;
+  }
+  .mg-subscribe-form form {
+    width: 60%;
+  }
+} /***** END MOBILE *****/
+
+/* For Mini Mobile. */
+@media (max-width: 480px) {
+
+  .mg-subscribe-form form {
+    width: 100%;
+  }
+  .mg-subscribe-now::before,
+  .mg-subscribe-now::after {
+    display: none;
+  }
+} /***** END MINI MOBILE *****/

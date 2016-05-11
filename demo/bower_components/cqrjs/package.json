@@ -1,0 +1,27 @@
+{
+  "name": "cqrjs",
+  "version": "0.1.0",
+  "description": "cQR code generator in Javascript",
+  "main": "cqr.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kaaninel/cQRjs.git"
+  },
+  "keywords": [
+    "qr",
+    "qr.js",
+    "qrcode",
+    "cqr",
+    "cqr.js",
+    "cqrcode"
+  ],
+  "author": "Necati Kaan İnel<kaaninel@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kaaninel/cQRjs/issues"
+  },
+  "homepage": "https://github.com/kaaninel/cQRjs"
+}
